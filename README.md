@@ -1,18 +1,18 @@
-# 🤖 RAG History - AI Chat Interface
+# RAG History - AI Chat Interface
 
-> A modern, production-ready React chat application with authentication, chat history, and real-time messaging capabilities. Built with performance optimization and best practices in mind.
+A modern, production-ready React chat application with authentication, chat history, and real-time messaging capabilities. Built with performance optimization and best practices in mind.
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
-## ✨ Features
+## Features
 
-### 🔐 **Authentication System**
+### Authentication System
 - JWT-based authentication with secure HTTP-only cookies
 - Complete login/signup flow with form validation
 - Auto-redirect and session management
 - Protected routes for authenticated users
 
-### 💬 **Advanced Chat Interface**
+### Advanced Chat Interface
 - ChatGPT-inspired modern UI design
 - Real-time typing effects and animations
 - Markdown support with syntax highlighting
@@ -20,22 +20,22 @@
 - Mobile-responsive collapsible sidebar
 - Message history organized by date groups
 
-### 🎯 **Performance Optimized**
+### Performance Optimized
 - React.memo for preventing unnecessary re-renders
 - useCallback and useMemo for optimal performance
 - Centralized error handling with production-ready logging
 - PropTypes for enhanced type safety
 - Clean code architecture following React best practices
 
-### 🛡️ **Production Ready**
+### Production Ready
 - Comprehensive error handling and logging
 - Environment-specific configurations
 - Security best practices implemented
 - Clean project structure and maintainable code
 
-## 🏗️ **Architecture & Tech Stack**
+## Architecture & Tech Stack
 
-### **Frontend**
+### Frontend
 - **React 18** - Modern React with hooks and concurrent features
 - **React Router v6** - Client-side routing with protected routes
 - **Framer Motion** - Smooth animations and transitions
@@ -44,73 +44,24 @@
 - **Lucide React** - Modern icon library
 - **PropTypes** - Runtime type checking
 
-### **Backend** 
+### Backend 
 - **Flask** - Python web framework
 - **JWT** - JSON Web Token authentication
 - **RESTful API** - Clean API architecture
 
-### **Development Tools**
+### Development Tools
 - **Create React App** - Zero-config build setup
 - **ESLint** - Code linting and formatting
 - **CSS Modules** - Scoped styling architecture
 
-## 📁 **Project Structure**
+## Quick Start
 
-```
-rag_history/
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── assets/              # Static assets and images
-│   │   ├── components/
-│   │   │   ├── auth/           # Authentication components
-│   │   │   │   ├── Login.js
-│   │   │   │   ├── Signup.js
-│   │   │   │   └── Auth.css
-│   │   │   ├── chat/           # Chat interface components
-│   │   │   │   ├── ChatLayout.js    # Main chat container
-│   │   │   │   ├── ChatMessage.js   # Individual message component
-│   │   │   │   ├── ChatInput.js     # Message input component
-│   │   │   │   ├── Sidebar.js       # Chat history sidebar
-│   │   │   │   └── [CSS files]
-│   │   │   └── common/         # Shared components
-│   │   │       ├── ProtectedRoute.js
-│   │   │       └── TitleBar.js
-│   │   ├── context/            # React Context providers
-│   │   │   ├── AuthContext.js  # Authentication state
-│   │   │   ├── ChatContext.js  # Chat state management
-│   │   │   └── ThemeContext.js # Theme management
-│   │   ├── hooks/              # Custom React hooks
-│   │   │   └── useTypingEffect.js
-│   │   ├── pages/              # Page components
-│   │   │   ├── AuthPage.js
-│   │   │   └── ChatPage.js
-│   │   ├── services/           # API services
-│   │   │   └── api.js
-│   │   ├── styles/             # Global styles
-│   │   │   └── theme.css
-│   │   ├── utils/              # Utility functions
-│   │   │   ├── helpers.js      # Common utility functions
-│   │   │   └── logger.js       # Production-ready logging
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
-└── backend/
-    ├── app.py                  # Flask application
-    ├── requirements.txt        # Python dependencies
-    └── README.md
-```
-
-## � **Quick Start**
-
-### **Prerequisites**
+### Prerequisites
 - Node.js 16+ and npm/yarn
 - Python 3.8+ (for backend)
 - Git
 
-### **Installation**
+### Installation
 
 1. **Clone the repository:**
 ```bash
@@ -139,7 +90,7 @@ python app.py
 4. **Open your browser:**
 Navigate to [http://localhost:3000](http://localhost:3000)
 
-### **Available Scripts**
+### Available Scripts
 
 ```bash
 npm start          # Development server
@@ -148,9 +99,9 @@ npm test           # Run tests
 npm run lint       # Code linting
 ```
 
-## ⚙️ **Configuration**
+## Configuration
 
-### **Environment Variables**
+### Environment Variables
 Create `.env` file in project root:
 ```env
 # API Configuration
@@ -160,17 +111,17 @@ REACT_APP_API_URL=http://localhost:5000/api
 NODE_ENV=development
 ```
 
-### **API Base URL**
+### API Base URL
 Update in `src/services/api.js`:
 ```javascript
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 ```
 
-## 🔌 **API Integration**
+## API Integration
 
-### **Required Backend Endpoints**
+### Required Backend Endpoints
 
-#### **Authentication**
+#### Authentication
 ```javascript
 POST /api/auth/login
 POST /api/auth/signup  
@@ -178,7 +129,7 @@ POST /api/auth/logout
 GET  /api/auth/verify
 ```
 
-#### **Chat Management**
+#### Chat Management
 ```javascript
 GET    /api/chat/history     # Get user's chats
 GET    /api/chat/:chatId     # Get specific chat
@@ -187,7 +138,7 @@ POST   /api/chat/:chatId/message  # Send message
 DELETE /api/chat/:chatId     # Delete chat
 ```
 
-### **API Response Format**
+### API Response Format
 ```javascript
 // Success Response
 {
@@ -204,29 +155,29 @@ DELETE /api/chat/:chatId     # Delete chat
 }
 ```
 
-## �️ **Development**
+## Development
 
-### **Code Quality Standards**
+### Code Quality Standards
 - **ESLint** for code linting
 - **PropTypes** for type checking
 - **React.memo** for performance optimization
 - **useCallback/useMemo** for preventing unnecessary re-renders
 - **Centralized error handling** with Logger utility
 
-### **Project Guidelines**
+### Project Guidelines
 - Components use functional components with hooks
 - Context providers for state management
 - Modular CSS with component-scoped styles
 - Utility functions in dedicated files
 - Consistent error handling across components
 
-### **Performance Optimizations**
+### Performance Optimizations
 - React.memo for expensive components
 - Memoized callbacks and computed values
 - Lazy loading for route components
 - Optimized bundle size with code splitting
 
-## 🛡️ **Security Features**
+## Security Features
 
 - **JWT Authentication** with HTTP-only cookies
 - **CSRF Protection** with SameSite cookies  
@@ -235,7 +186,7 @@ DELETE /api/chat/:chatId     # Delete chat
 - **Auto-logout** on token expiration
 - **Secure API communication** with Axios interceptors
 
-## 📱 **Mobile Responsiveness**
+## Mobile Responsiveness
 
 - **Responsive breakpoints** for all screen sizes
 - **Touch-friendly** UI components
@@ -243,9 +194,9 @@ DELETE /api/chat/:chatId     # Delete chat
 - **Optimized layouts** for mobile and tablet
 - **Mobile-first CSS** approach
 
-## 🎨 **Customization**
+## Customization
 
-### **Theming**
+### Theming
 The app uses CSS custom properties for easy theming:
 ```css
 :root {
@@ -256,27 +207,27 @@ The app uses CSS custom properties for easy theming:
 }
 ```
 
-### **Component Customization**
+### Component Customization
 - Modular CSS files for each component
 - Configurable animation settings
 - Customizable UI layouts and styling
 - Theme-aware components
 
-## 🚀 **Production Deployment**
+## Production Deployment
 
-### **Build for Production**
+### Build for Production
 ```bash
 npm run build
 ```
 
-### **Environment Setup**
+### Environment Setup
 ```env
 # Production Environment
 NODE_ENV=production
 REACT_APP_API_URL=https://your-api-domain.com/api
 ```
 
-### **Deployment Checklist**
+### Deployment Checklist
 - [ ] Set environment variables
 - [ ] Configure HTTPS
 - [ ] Set secure cookie flags
@@ -285,9 +236,9 @@ REACT_APP_API_URL=https://your-api-domain.com/api
 - [ ] Test authentication flow
 - [ ] Verify API endpoints
 
-## � **Troubleshooting**
+## Troubleshooting
 
-### **Common Issues**
+### Common Issues
 
 **CORS Errors:**
 ```javascript
@@ -308,41 +259,37 @@ app.use(cors({
 - Check for dependency conflicts
 - Verify environment variables
 
-### **Debug Mode**
+### Debug Mode
 Enable development logging:
 ```javascript
 // Set in .env
 REACT_APP_DEBUG=true
 ```
 
-## � **Performance Metrics**
+## Performance Metrics
 
 - **Build Size:** ~377KB (gzipped)
 - **Load Time:** <2s on 3G
 - **Lighthouse Score:** 90+ 
 - **Mobile Performance:** Optimized
 
-## 🤝 **Contributing**
+## Contributing
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+We welcome contributions to this project! Please read our [Contributing Guide](CONTRIBUTING.md) for details on how to get started, coding standards, and the development workflow.
 
-### **Development Setup**
-```bash
-git clone <your-fork>
-cd rag_history
-npm install
-npm start
-```
+### Quick Contributing Steps
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes following our coding guidelines
+4. Submit a pull request
 
-## 📄 **License**
+See [CONTRIBUTING.md](CONTRIBUTING.md) for comprehensive guidelines.
+
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 **Acknowledgments**
+## Acknowledgments
 
 - React team for the amazing framework
 - Framer Motion for smooth animations
@@ -351,14 +298,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🎯 **What's Next?**
+This application is production-ready and includes clean, optimized codebase with performance optimizations, error handling and logging, security best practices, mobile responsiveness, and type safety with PropTypes.
 
-This application is production-ready and includes:
-- ✅ **Clean, optimized codebase**
-- ✅ **Performance optimizations** 
-- ✅ **Error handling and logging**
-- ✅ **Security best practices**
-- ✅ **Mobile responsiveness**
-- ✅ **Type safety with PropTypes**
-
-Ready to deploy and scale! 🚀
+Ready to deploy and scale!
