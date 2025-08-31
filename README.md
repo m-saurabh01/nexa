@@ -1,4 +1,4 @@
-# RAG History - AI Chat Interface
+# Nexa - AI Chat Interface
 
 A modern, production-ready React chat application with authentication, chat history, and real-time messaging capabilities. Built with performance optimization and best practices in mind.
 
