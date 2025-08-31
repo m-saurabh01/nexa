@@ -1,0 +1,127 @@
+/* Global Theme Variables */
+:root {
+  /* Dark Theme (Default) */
+  --main-bg: #212121;
+  --auth-bg: #1a1a1a;
+  --chat-container-bg: #343541;
+  --sidebar-bg: #202123;
+  --sidebar-header-bg: #1a1a1e;
+  --message-bg: #444654;
+  --user-message-bg: #2f2f2f;
+  --input-bg: #40414f;
+  --button-hover-bg: #2A2B32;
+  --border-color: #565869;
+  --text-primary: #ececf1;
+  --text-secondary: #b4b4b4;
+  --accent-color: #10A37F;
+  --code-bg: #2d2d2d;
+  --code-text: #f8f8f2;
+  --error-color: #EF4444;
+  
+  /* Legacy variables for backward compatibility */
+  --primary-text: var(--text-primary);
+  --secondary-text: var(--text-secondary);
+  --placeholder-text: var(--text-secondary);
+  --ai-message-bg: var(--message-bg);
+  --brand-color: var(--accent-color);
+  --hover-bg: var(--button-hover-bg);
+  --button-bg: var(--input-bg);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --main-bg: #FFFFFF;
+  --auth-bg: #F8F9FA;
+  --chat-container-bg: #F9F9F9;
+  --sidebar-bg: #F7F7F8;
+  --sidebar-header-bg: #FFFFFF;
+  --message-bg: #F1F1F3;
+  --user-message-bg: #E5E7EB;
+  --input-bg: #FFFFFF;
+  --button-hover-bg: #E8E8E8;
+  --border-color: #D1D5DB;
+  --text-primary: #374151;
+  --text-secondary: #6B7280;
+  --accent-color: #059669;
+  --code-bg: #F9FAFB;
+  --code-text: #111827;
+  --error-color: #EF4444;
+  
+  /* Legacy variables for backward compatibility */
+  --primary-text: var(--text-primary);
+  --secondary-text: var(--text-secondary);
+  --placeholder-text: var(--text-secondary);
+  --ai-message-bg: var(--message-bg);
+  --brand-color: var(--accent-color);
+  --hover-bg: var(--button-hover-bg);
+  --button-bg: var(--input-bg);
+}
+
+/* Light theme code block overrides */
+
+
+/* Apply theme variables to body */
+body {
+  background-color: var(--main-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Code styling */
+pre, code {
+  background-color: var(--code-bg) !important;
+  color: var(--code-text) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+code {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875em;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+pre code {
+  padding: 0;
+  border: none;
+  background: transparent !important;
+}
+
+/* Global scrollbar styling */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--main-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--main-bg);
+}
+
+/* Add top padding to account for fixed title bar */
+.app-container {
+  height: 100vh;
+}
+
+/* Ensure all components use theme variables */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

@@ -1,0 +1,125 @@
+.title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--title-bar-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.title-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1rem;
+  max-width: 100%;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--brand-gradient);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--brand-shadow);
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--toggle-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--hover-bg);
+  color: var(--brand-color);
+  border-color: var(--brand-color);
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Dark Theme Variables */
+:root {
+  --title-bar-bg: rgba(32, 33, 35, 0.95);
+  --primary-text: #ECECF1;
+  --secondary-text: #ACACBE;
+  --border-color: #565869;
+  --brand-color: #10A37F;
+  --brand-gradient: linear-gradient(135deg, #10A37F, #0D8F6B);
+  --brand-shadow: rgba(16, 163, 127, 0.3);
+  --toggle-bg: #444654;
+  --hover-bg: #2A2B32;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --title-bar-bg: rgba(255, 255, 255, 0.95);
+  --primary-text: #202123;
+  --secondary-text: #4B4C52;
+  --border-color: #DADADA;
+  --brand-color: #10A37F;
+  --brand-gradient: linear-gradient(135deg, #10A37F, #0D8F6B);
+  --brand-shadow: rgba(16, 163, 127, 0.2);
+  --toggle-bg: #F7F7F8;
+  --hover-bg: #EBEBED;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title-bar-content {
+    padding: 0 0.75rem;
+  }
+  
+  .brand-title {
+    font-size: 1.25rem;
+  }
+  
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,228 @@
+.chat-layout {
+  display: flex;
+  height: 100vh;
+  background: var(--main-bg);
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+  min-width: 0;
+  position: relative;
+}
+
+.chat-main.sidebar-collapsed {
+  margin-left: 0;
+}
+
+.floating-menu-btn {
+  position: fixed;
+  top: 5rem;
+  left: 1rem;
+  z-index: 1000;
+  background: var(--button-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: var(--primary-text);
+}
+
+.floating-menu-btn:hover {
+  background: var(--hover-bg);
+  border-color: var(--brand-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--chat-container-bg);
+  justify-content: flex-start;
+  position: relative;
+}
+
+.welcome-state {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.welcome-content {
+  text-align: center;
+  max-width: 600px;
+  color: var(--primary-text);
+}
+
+.welcome-content h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-text);
+}
+
+.welcome-content p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--secondary-text);
+}
+
+.example-prompts {
+  margin-top: 2rem;
+}
+
+.example-prompts h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.prompt-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem;
+  background: var(--message-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  user-select: none;
+}
+
+.prompt-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(16, 163, 127, 0.2);
+  transform: translateY(-2px);
+  background: var(--button-hover-bg);
+}
+
+.prompt-card:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(16, 163, 127, 0.1);
+}
+
+.prompt-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.prompt-card span:last-child {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.messages-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  min-height: 0;
+}
+
+.loading-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ACACBE;
+}
+
+.loading-state p {
+  margin-top: 1rem;
+  color: #ACACBE;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Custom scrollbar for chat container */
+.chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: var(--main-bg);
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chat-main {
+    margin-left: 0;
+  }
+  
+  .welcome-content h1 {
+    font-size: 1.875rem;
+  }
+  
+  .welcome-content p {
+    font-size: 1rem;
+  }
+  
+  .prompt-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prompt-card {
+    padding: 0.75rem;
+  }
+  
+  .welcome-state {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .example-prompts {
+    margin-top: 1.5rem;
+  }
+  
+  .prompt-card {
+    padding: 0.75rem;
+    gap: 8px;
+  }
+  
+  .prompt-icon {
+    font-size: 1.25rem;
+  }
+}
